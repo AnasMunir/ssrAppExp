@@ -8,9 +8,12 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:ssr": "ng build vader --prod && ng run vader:server && npm run webpack:server",
-    "serve:ssr": "node dist/vader/server.js",
-    "webpack:server": "webpack --config projects/vader/webpack.server.config.js"
+    "build-vader:ssr": "ng build vader --prod && ng run vader:server && npm run webpack-vader:server",
+    "serve-vader:ssr": "node dist/vader/server.js",
+    "webpack-vader:server": "webpack --config projects/vader/webpack.server.config.js",
+    "build-venom:ssr": "ng build venom --prod && ng run venom:server && npm run webpack-venom:server",
+    "serve-venom:ssr": "node dist/venom/server.js",
+    "webpack-venom:server": "webpack --config projects/venom/webpack.server.config.js"
   },
   "private": true,
   "dependencies": {
@@ -32,6 +35,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.7.2",
+    "@angular-devkit/build-ng-packagr": "^0.7.2",
     "@angular/cli": "^6.1.2",
     "@angular/compiler-cli": "^6.1.1",
     "@angular/language-service": "^6.1.1",

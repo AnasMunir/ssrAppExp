@@ -2,13 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { VenomComponent } from './venom/venom.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VenomComponent
   ],
   imports: [
-    BrowserModule
+    AppRoutingModule,
+    BrowserModule.withServerTransition({ appId: 'serverVenomApp' })
   ],
   providers: [],
   bootstrap: [AppComponent]

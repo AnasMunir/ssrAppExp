@@ -4,8 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { VaderComponent } from './vader/vader.component';
 import { AppRoutingModule } from './app-routing.module';
-import { FishryLibModule } from 'fishry-lib';
-// import { CartModule } from './cart/cart.module';
 
 @NgModule({
   declarations: [
@@ -14,9 +12,7 @@ import { FishryLibModule } from 'fishry-lib';
   ],
   imports: [
     AppRoutingModule,
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    // FishryLibModule
-    // CartModule
+    BrowserModule.withServerTransition({ appId: 'serverVaderApp' })
   ],
   providers: [],
   bootstrap: [AppComponent]

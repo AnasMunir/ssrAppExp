@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { VaderComponent } from './vader/vader.component';
+import { VenomComponent } from './venom/venom.component';
 
 import { Routes, RouterModule } from '@angular/router';
 
@@ -14,7 +14,7 @@ const routes: Routes = [
     },
     {
         path: '',
-        component: VaderComponent
+        component: VenomComponent
     }
 ];
 

@@ -92,6 +92,14 @@
               "**/node_modules/**"
             ]
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/venom-server",
+            "main": "projects/venom/src/main.server.ts",
+            "tsConfig": "projects/venom/tsconfig.server.json"
+          }
         }
       }
     },

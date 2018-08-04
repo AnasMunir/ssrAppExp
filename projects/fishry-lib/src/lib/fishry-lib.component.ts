@@ -10,7 +10,7 @@ import { FishryLibService } from './fishry-lib.service';
       fishry-lib works!
     </h1>
     <button (click)="setName('munir')">Set Name To Munir</button>
-    <h4>{{name}}</h4>
+    <h4 class="colored-text">{{name}}</h4>
     <a [routerLink]="['']">Go to vader</a>
   `,
   styles: []
