@@ -1,5 +1,8 @@
 {
   "compileOnSave": false,
+  "angularCompilerOptions": {
+    "enableIvy": true
+  },
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
@@ -15,6 +18,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "fishry-lib": [
+        "dist/fishry-lib"
+      ],
+      "fishry-lib/*": [
+        "dist/fishry-lib/*"
+      ]
+    }
   }
 }

@@ -3,9 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ssrApp": {
-      "root": "",
-      "sourceRoot": "src",
+    "venom": {
+      "root": "projects/venom/",
+      "sourceRoot": "projects/venom/src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {},
@@ -13,17 +13,17 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ssrApp",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "outputPath": "dist/venom",
+            "index": "projects/venom/src/index.html",
+            "main": "projects/venom/src/main.ts",
+            "polyfills": "projects/venom/src/polyfills.ts",
+            "tsConfig": "projects/venom/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/venom/src/favicon.ico",
+              "projects/venom/src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "projects/venom/src/styles.css"
             ],
             "scripts": []
           },
@@ -31,8 +31,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "projects/venom/src/environments/environment.ts",
+                  "with": "projects/venom/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -50,34 +50,34 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ssrApp:build"
+            "browserTarget": "venom:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ssrApp:build:production"
+              "browserTarget": "venom:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ssrApp:build"
+            "browserTarget": "venom:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
+            "main": "projects/venom/src/test.ts",
+            "polyfills": "projects/venom/src/polyfills.ts",
+            "tsConfig": "projects/venom/tsconfig.spec.json",
+            "karmaConfig": "projects/venom/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "projects/venom/src/styles.css"
             ],
             "scripts": [],
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/venom/src/favicon.ico",
+              "projects/venom/src/assets"
             ]
           }
         },
@@ -85,8 +85,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "projects/venom/tsconfig.app.json",
+              "projects/venom/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -95,26 +95,193 @@
         }
       }
     },
-    "ssrApp-e2e": {
-      "root": "e2e/",
+    "venom-e2e": {
+      "root": "projects/venom-e2e/",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ssrApp:serve"
+            "protractorConfig": "projects/venom-e2e/protractor.conf.js",
+            "devServerTarget": "venom:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ssrApp:serve:production"
+              "devServerTarget": "venom:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "e2e/tsconfig.e2e.json",
+            "tsConfig": "projects/venom-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "vader": {
+      "root": "projects/vader/",
+      "sourceRoot": "projects/vader/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/vader",
+            "index": "projects/vader/src/index.html",
+            "main": "projects/vader/src/main.ts",
+            "polyfills": "projects/vader/src/polyfills.ts",
+            "tsConfig": "projects/vader/tsconfig.app.json",
+            "assets": [
+              "projects/vader/src/favicon.ico",
+              "projects/vader/src/assets"
+            ],
+            "styles": [
+              "projects/vader/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/vader/src/environments/environment.ts",
+                  "with": "projects/vader/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "vader:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "vader:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "vader:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/vader/src/test.ts",
+            "polyfills": "projects/vader/src/polyfills.ts",
+            "tsConfig": "projects/vader/tsconfig.spec.json",
+            "karmaConfig": "projects/vader/karma.conf.js",
+            "styles": [
+              "projects/vader/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/vader/src/favicon.ico",
+              "projects/vader/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/vader/tsconfig.app.json",
+              "projects/vader/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/vader-server",
+            "main": "projects/vader/src/main.server.ts",
+            "tsConfig": "projects/vader/tsconfig.server.json"
+          }
+        }
+      }
+    },
+    "vader-e2e": {
+      "root": "projects/vader-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/vader-e2e/protractor.conf.js",
+            "devServerTarget": "vader:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "vader:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/vader-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "fishry-lib": {
+      "root": "projects/fishry-lib",
+      "sourceRoot": "projects/fishry-lib/src",
+      "projectType": "library",
+      "prefix": "fishry",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/fishry-lib/tsconfig.lib.json",
+            "project": "projects/fishry-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/fishry-lib/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/fishry-lib/src/test.ts",
+            "tsConfig": "projects/fishry-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/fishry-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/fishry-lib/tsconfig.lib.json",
+              "projects/fishry-lib/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]
@@ -122,6 +289,5 @@
         }
       }
     }
-  },
-  "defaultProject": "ssrApp"
+  }
 }
