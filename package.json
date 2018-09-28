@@ -31,6 +31,7 @@
     "core-js": "^2.5.7",
     "fishry-lib": "file:dist/fishry-lib/fishry-lib-0.0.1.tgz",
     "rxjs": "^6.0.0",
+    "vhost": "^3.0.2",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

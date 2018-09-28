@@ -48,11 +48,13 @@ app.set('views', join(DIST_FOLDER, APP_NAME));
 app.get('*.*', express.static(join(DIST_FOLDER, APP_NAME)));
 
 // Point all routes to Universal
-app.get('*', (req, res) => {
+const vaderApp = app.get('*', (req, res) => {
     res.render('index', { req });
 });
 
 // Start Express Server
-app.listen(PORT, () => {
+/* app.listen(PORT, () => {
     console.log(`Node Express server listening on http://localhost:${PORT}`);
-});
+}); */
+
+module.exports = vaderApp;
