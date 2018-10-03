@@ -2,14 +2,15 @@ const express = require('express');
 const vhost = require('vhost');
 
 const vader = require('./dist/vader/server.js');
+const venom = require('./dist/venom/server.js');
+
 // const venom = require('./dist/venom/server.js');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-console.log('vader', vader);
-// app.use(vhost('vader.local.com', vader));
-// app.use(vhost('venom.local.com', venom));
+app.use(vhost('vader.local.com', vader));
+app.use(vhost('venom.local.com', venom));
 
 let server = app.listen(PORT, () => {
   console.log(`Node server listening on http://localhost:${PORT}`);

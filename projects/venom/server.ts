@@ -1,5 +1,5 @@
 // These are important and needed before anything else
-import 'zone.js/dist/zone-node';
+// import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
 
 import { enableProdMode } from '@angular/core';
@@ -49,6 +49,7 @@ app.get('*.*', express.static(join(DIST_FOLDER, APP_NAME)));
 
 // Point all routes to Universal
 const venomApp = app.get('*', (req, res) => {
+    console.log(`${APP_NAME} theme connected`);
     res.render('index', { req });
 });
 
@@ -57,4 +58,4 @@ const venomApp = app.get('*', (req, res) => {
     console.log(`Node Express server listening on http://localhost:${PORT}`);
 }); */
 
-export default venomApp;
+module.exports = venomApp;

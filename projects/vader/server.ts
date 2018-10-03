@@ -20,7 +20,7 @@ const {
 } = require(`../../dist/${APP_NAME}-server/main`);
 
 enableProdMode();
-
+console.log('exporting vaderApp from ts file');
 const app = express();
 
 // Set the engine
@@ -49,11 +49,13 @@ app.get('*.*', express.static(join(DIST_FOLDER, APP_NAME)));
 
 // Point all routes to Universal
 const vaderApp = app.get('*', (req, res) => {
+    console.log(`${APP_NAME} theme connected`);
     res.render('index', { req });
+    // res.render(join(DIST_FOLDER, APP_NAME, 'index.html'), { req });
 });
 
 // Start Express Server
-/* app.listen(PORT, () => {
+/* vaderApp.listen(PORT, () => {
     console.log(`Node Express server listening on http://localhost:${PORT}`);
 }); */
 

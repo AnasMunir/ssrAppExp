@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FishryLibService } from 'fishry-lib';
+// import { FishryLibService } from 'fishry-lib';
 
 @Component({
   selector: 'app-venom',
@@ -8,14 +8,14 @@ import { FishryLibService } from 'fishry-lib';
 })
 export class VenomComponent implements OnInit {
   name: string = '';
-  constructor(public fishryService: FishryLibService) { }
+  constructor(/* public fishryService: FishryLibService */) { }
 
   ngOnInit() {
-    this.fishryService._name
-      .subscribe((name: string) => this.name = name);
+    // this.fishryService._name
+    //   .subscribe((name: string) => this.name = name);
   }
 
   setName(name: string) {
-    this.fishryService._name.next(name);
+    // this.fishryService._name.next(name);
   }
 }
